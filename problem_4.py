@@ -4,6 +4,7 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 import cProfile
+from profiling import test_func
 
 def isPalindome(n):
     if str(n) == str(n)[::-1]:
@@ -36,11 +37,6 @@ def largestPalindromeMatrix():
     b = a.copy()[:,None]
     res = a*b
     return max([num for num in res if isPalindome(num)])
-
-
-def test_func(func, n):
-    for _ in xrange(n):
-        func()
 
 cProfile.run("test_func(largestPalindromeLoops, 5)") #this is 5x faster
 cProfile.run("test_func(largestPalindromeRange, 5)")
