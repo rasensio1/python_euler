@@ -15,8 +15,8 @@ def gcd(x, y):
 
 
 def smallest_multiple():
-    nums = set(range(11, 21))
-    agg = 10
+    nums = set(range(12, 21))
+    agg = 11
     for num in nums:
         agg = ((agg * num) / gcd(agg, num))
 
