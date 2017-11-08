@@ -6,7 +6,7 @@
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
 import cProfile
-from profiling import test_func
+from helpers import profiling
 
 def multiple_loop():
     accum = 0
@@ -22,5 +22,5 @@ def multiple_set():
     range_5 = xrange(0, 1000, 5)
     return sum(set(range_3).union(range_5))
 
-cProfile.run("test_func(multiple_loop, 10000)") # 5x slower than using set
-cProfile.run("test_func(multiple_set, 10000)") # fastest solution
+cProfile.run("profiling.test_func(multiple_loop, 10000)") # 5x slower than using set
+cProfile.run("profiling.test_func(multiple_set, 10000)") # fastest solution

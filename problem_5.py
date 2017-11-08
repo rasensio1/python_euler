@@ -4,7 +4,7 @@
 # What is the smallest positive number that is evenly divisible by all of the
 # numbers from 1 to 20?
 import cProfile
-from profiling import test_func
+from helpers import profiling
 
 
 #Least common multiple of x and y is (x*y)/greatest_common_denom(x, y)
@@ -24,4 +24,4 @@ def smallest_multiple():
 
 print smallest_multiple()
 
-cProfile.run("test_func(smallest_multiple, 1000)") #this is super fast!
+cProfile.run("profiling.test_func(smallest_multiple, 1000)") #this is super fast!
